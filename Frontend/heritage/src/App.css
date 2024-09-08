@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+/* General Styles */
+*{
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box; 
+}
+div {
+  background-color: #faf9f6;
+  color: #090506;
+  box-sizing: border-box;
+}
+
+/* Text Styles */
+.text-center {
+  margin-left: 50px;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 60px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Added subtle text shadow */
+}
+
+/* Image Styles */
+.row img {
+  width: 97vw;
+  height: 90vh;
+  border-radius: 15px;
+  border: 5px solid #e5a586; /* Added border around images */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Added shadow for depth */
+}
+
+.abouting {
+  width: 90%;
+  height: 250px !important;
+  border: 3px solid #e5a586; /* Added a border */
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Added shadow */
+}
+
+/* Navbar Styles */
+.navbar {
+  border-bottom: 3px solid #e5a586; /* Highlighted the navbar */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0; /* No margin at the bottom */
+  padding-bottom: 0; /* No padding at the bottom */
+}
+
+.navbar-brand {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-size: xx-large;
+  font-style: normal;
+  color: #e5a586; /* Change this to your desired color */
+  text-transform: uppercase; /* Optional: to uppercase text */
+  letter-spacing: 1px; /* Optional: adjust spacing */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Optional: add a subtle text shadow */
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-collapse {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Search Container */
+.search-container {
+  display: flex;
+  align-items: center;
+  /* padding: 0.5rem; */
+  border-radius: 25px;
+  background-color: #ead3bc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#search-input {
+  margin-right: 0.5rem;
+  /* padding: 0.5rem; */
+  border: 2px solid #e5a586;
+  border-radius: 5px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#search-results {
+  margin-top: 0.5rem;
+}
+
+/* Card Image Styles */
+.card-img-top {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  border: 2px solid #e5a586; /* Added border */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Added shadow for depth */
+}
+
+.aboutus-img img {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+  width: 80vh;
+  border-radius: 10px;
+  border: 3px solid #e5a586; /* Added a border */
+  margin-left: 55px;
+}
+
+/* Caption Styling */
+.caption {
+  margin-right: 30px;
+  font-style: italic;
+  color: #333;
+  border-left: 4px solid #e5a586; /* Added a left border highlight */
+  padding-left: 10px;
+}
+
+/* About Row */
+.about-row {
+  display: flex;
+  height: 100vh;
+  background-color: #f3e0d2; /* Lightened background for contrast */
+}
+
+/* Sub-Part */
+.sub-part {
+  display: flex;
+  height: 60vh;
+  margin-top: 30px;
+  margin-left: 57px;
+  width: 90vw;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 3px solid #e5a586;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Added depth */
+}
+
+/* Navbar Icon Image */
+.nav-link img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #e5a586; /* Added border for icon */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
+}
+
+/* Popup Styles */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: #ead3bc;
+  padding: 20px;
+  width: 55%;
+  height: 80%;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Added strong shadow */
+  position: relative;
+  text-align: center;
+  border-radius: 5px;
+  border: 3px solid #e5a586; /* Highlighted border */
+}
+
+.popup-image {
+  border: 2px solid black;
+  height: 48vh;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5), 0 6px 20px rgba(0, 0, 0, 0.3); /* Increased shadow */
+}
+
+.popup-description {
+  background-color: #fff;
+  margin-top: 20px;
+  border: 2px solid #e5a586; /* Added a border */
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.carousel-controls {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom Marker Styles */
+.custom-marker {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.custom-marker .icon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #ff5722;
+  border-radius: 50%;
+  border: 3px solid white;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 40px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Added shadow */
+}
+
+/* .container1 {
+  height: 50vh; 
+  margin-top: 0;
+  padding-top: 0;
+  background-color: #f5f5f5; 
+  position: relative;
+  top: 0;
+} */
