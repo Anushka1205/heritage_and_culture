@@ -1,20 +1,32 @@
 import React, { useEffect, useState } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { Modal, Button } from 'react-bootstrap'; // Import Bootstrap components
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// Function to create dynamic icons with images
+const createImageIcon = (imageUrl) => {
+  if (!imageUrl) {
+    console.error('Image URL is not provided');
+    return L.icon({
+      iconUrl: 'path/to/default-icon.png', // Fallback to a default icon if imageUrl is not provided
+      iconSize: [40, 40], // Size of the marker
+      iconAnchor: [20, 40], // Anchor point (center bottom)
+      popupAnchor: [0, -40], // Popup anchor point
+      className: 'custom-marker', // Custom class for additional styling
+    });
+  }
 
-// Function to create dynamic icons
-const createDynamicIcon = (text) => {
-  return L.divIcon({
-    className: 'custom-marker',
-    html: `<div class="icon">${text}</div>`,
-    iconSize: [40, 60], // Size of the icon (including the pointy part)
-    iconAnchor: [20, 50], // Anchor point of the icon (bottom center)
-    popupAnchor: [0, -50], // Popup anchor point
+  console.log('Creating icon with URL:', imageUrl); // Log the URL being used
+
+  return L.icon({
+    iconUrl: imageUrl, // Use the image URL for the icon
+    iconSize: [40, 40], // Size of the marker
+    iconAnchor: [20, 40], // Anchor point (center bottom)
+    popupAnchor: [0, -40], // Popup anchor point
+    className: 'custom-marker', // Custom class for additional styling
   });
 };
 
@@ -23,13 +35,14 @@ const LocationModal = ({ show, onHide, location }) => {
   if (!location) return null; // If no location is provided, return nothing
 
   return (
-    <Modal show={show} onHide={onHide}>
+    <Modal show={show} onHide={onHide} size="lg">
       <Modal.Header closeButton>
-        <Modal.Title>{location.name}</Modal.Title>
+        <Modal.Title className="modal-title">{location.name}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <p><strong>Description:</strong> {location.description}</p>
-        <p><strong>Coordinates:</strong> {location.latitude}, {location.longitude}</p>
+        <div className="modal-image-container">
+          <img src={location.img1} alt={location.name} className="modal-image" />
+        </div>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={onHide}>
@@ -78,15 +91,11 @@ const ZoomControlledMarkers = ({ locations }) => {
         <Marker
           key={index}
           position={[location.latitude, location.longitude]}
-          icon={createDynamicIcon(location.name[0])} // Use the first letter of the name for the icon
+          icon={createImageIcon(location.img1)} // Use the first image for the marker
           eventHandlers={{
             click: () => handleMarkerClick(location), // Handle marker click
           }}
-        >
-          <Popup>
-            {location.name}
-          </Popup>
-        </Marker>
+        />
       ))}
       {/* Modal to show location details */}
       <LocationModal
@@ -102,9 +111,12 @@ const MapComponent = () => {
   const [locations, setLocations] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/locations')
+    fetch('http://localhost:5000/api/locations') // Adjust the API endpoint if necessary
       .then(response => response.json())
-      .then(data => setLocations(data))
+      .then(data => {
+        console.log('Fetched locations:', data); // Log data to verify structure
+        setLocations(data);
+      })
       .catch(error => console.error('Error fetching locations:', error));
   }, []);
 
