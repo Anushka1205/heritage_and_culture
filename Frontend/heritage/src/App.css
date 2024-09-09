@@ -1,24 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 /* General Styles */
-*{
- padding: 0;
- margin: 0;
- box-sizing: border-box; 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-div {
+
+body {
   background-color: #faf9f6;
   color: #090506;
-  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 /* Text Styles */
 .text-center {
   margin-left: 50px;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Josefin Sans', sans-serif;
   font-size: 60px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Added subtle text shadow */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Image Styles */
@@ -26,66 +23,110 @@ div {
   width: 97vw;
   height: 90vh;
   border-radius: 15px;
-  border: 5px solid #e5a586; /* Added border around images */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Added shadow for depth */
+  border: 5px solid #e5a586;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .abouting {
   width: 90%;
   height: 250px !important;
-  border: 3px solid #e5a586; /* Added a border */
+  border: 3px solid #e5a586;
   border-radius: 8px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Added shadow */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Navbar Styles */
 .navbar {
-  border-bottom: 3px solid #e5a586; /* Highlighted the navbar */
+  border-bottom: 3px solid #e5a586;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 0; /* No margin at the bottom */
-  padding-bottom: 0; /* No padding at the bottom */
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 20px; /* Add padding to the left and right */
 }
 
 .navbar-brand {
   font-family: "Libre Baskerville", serif;
   font-weight: 700;
   font-size: xx-large;
-  font-style: normal;
-  color: #e5a586; /* Change this to your desired color */
-  text-transform: uppercase; /* Optional: to uppercase text */
-  letter-spacing: 1px; /* Optional: adjust spacing */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Optional: add a subtle text shadow */
-}
-
-.navbar-toggler {
-  border: none;
+  color: #e5a586;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-collapse {
   display: flex;
-  justify-content: flex-end;
+  flex-grow: 1;
+  justify-content: center; /* Center navbar items */
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-item {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.nav-link {
+  color: #090506;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #e5a586;
 }
 
 /* Search Container */
 .search-container {
   display: flex;
   align-items: center;
-  /* padding: 0.5rem; */
-  border-radius: 25px;
-  background-color: #ead3bc;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  background-color: #fff;
+  padding: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin-left: auto; /* Pushes the search container to the right */
 }
 
 #search-input {
-  margin-right: 0.5rem;
-  /* padding: 0.5rem; */
-  border: 2px solid #e5a586;
-  border-radius: 5px;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: none;
+  padding: 10px;
+  flex-grow: 1;
+  border-radius: 30px;
+  outline: none;
+  background-color: #f1f1f1;
+  font-size: 16px;
+}
+
+#search-input:focus {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"] {
+  background-color: #e5a586;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: #d4926d;
 }
 
 #search-results {
   margin-top: 0.5rem;
+  font-size: 14px;
 }
 
 /* Card Image Styles */
@@ -93,15 +134,15 @@ div {
   width: 100%;
   height: auto;
   border-radius: 5px;
-  border: 2px solid #e5a586; /* Added border */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Added shadow for depth */
+  border: 2px solid #e5a586;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .aboutus-img img {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
   width: 80vh;
   border-radius: 10px;
-  border: 3px solid #e5a586; /* Added a border */
+  border: 3px solid #e5a586;
   margin-left: 55px;
 }
 
@@ -110,7 +151,7 @@ div {
   margin-right: 30px;
   font-style: italic;
   color: #333;
-  border-left: 4px solid #e5a586; /* Added a left border highlight */
+  border-left: 4px solid #e5a586;
   padding-left: 10px;
 }
 
@@ -118,7 +159,7 @@ div {
 .about-row {
   display: flex;
   height: 100vh;
-  background-color: #f3e0d2; /* Lightened background for contrast */
+  background-color: #f3e0d2;
 }
 
 /* Sub-Part */
@@ -133,7 +174,7 @@ div {
   background-color: #fff;
   border-radius: 10px;
   border: 3px solid #e5a586;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Added depth */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Navbar Icon Image */
@@ -141,8 +182,8 @@ div {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 2px solid #e5a586; /* Added border for icon */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
+  border: 2px solid #e5a586;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Popup Styles */
@@ -164,27 +205,26 @@ div {
   padding: 20px;
   width: 55%;
   height: 80%;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Added strong shadow */
-  position: relative;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
   text-align: center;
   border-radius: 5px;
-  border: 3px solid #e5a586; /* Highlighted border */
+  border: 3px solid #e5a586;
 }
 
 .popup-image {
   border: 2px solid black;
   height: 48vh;
   border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5), 0 6px 20px rgba(0, 0, 0, 0.3); /* Increased shadow */
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5), 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .popup-description {
   background-color: #fff;
   margin-top: 20px;
-  border: 2px solid #e5a586; /* Added a border */
+  border: 2px solid #e5a586;
   border-radius: 5px;
   padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .carousel-controls {
@@ -195,34 +235,39 @@ div {
 
 /* Custom Marker Styles */
 .custom-marker {
-  position: relative;
   width: 40px;
   height: 40px;
-}
-
-.custom-marker .icon {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background-color: #ff5722;
-  border-radius: 50%;
-  border: 3px solid white;
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 40px;
-  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Added shadow */
+  border-radius: 50%;
+  border: 3px solid white;
+  background-size: cover; /* Ensure the background image covers the entire icon */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent repeating the background image */
 }
 
-/* .container1 {
-  height: 50vh; 
-  margin-top: 0;
-  padding-top: 0;
-  background-color: #f5f5f5; 
-  position: relative;
-  top: 0;
-} */
+.custom-marker img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+/* Modal Styles */
+.modal-title {
+  text-align: center; /* Center the title text */
+  width: 100%; /* Ensure the title takes full width */
+}
+
+.modal-image-container {
+  display: flex;
+  justify-content: center; /* Center the image container */
+  width: 100%;
+}
+
+.modal-image {
+  max-width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px;
+}

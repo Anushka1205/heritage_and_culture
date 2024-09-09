@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 import monumentimg from '../assets/monuments.jpg';
-import tajmahal from '../assets/tajmahal.jpg';
+import tajmahal from '../assets/tajmahal.jpeg';
 import hawamahal from '../assets/hawamahal.jpg';
-import redfort from '../assets/redfort.jpg';
-import goldentemple from '../assets/goldentemple.jpg';
-import qutubminar from '../assets/qutubminar.jpg';
+import redfort from '../assets/redfort.jpeg';
+import goldentemple from '../assets/goldentemple.jpeg';
+import qutubminar from '../assets/qutubminar.jpeg';
 
 // Monument schema
 const monuments = [
@@ -90,7 +90,7 @@ const Navbar = () => {
           <div className="search-container">
             <form id="search-form">
               <input type="text" placeholder="Search..." name="search" id="search-input" />
-              <button type="submit" style={{ color: '#090506' }}>Search</button>
+              <button type="submit" style={{ color: '#fff' }}>Search</button>
             </form>
             <div id="search-results"></div>
           </div>
@@ -116,7 +116,6 @@ const Navbar = () => {
               <button onClick={() => changeMonument(-1)} className="prev-btn">❮</button>
               <button onClick={() => changeMonument(1)} className="next-btn">❯</button>
             </div>
-            
           </div>
         </div>
       )}

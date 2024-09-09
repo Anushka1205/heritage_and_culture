@@ -6,6 +6,7 @@ const locationSchema = new mongoose.Schema({
   type: String,
   latitude: Number,
   longitude: Number,
+  images: [String] // Array of strings to store image URLs
 });
 
 const Location = mongoose.model('Location', locationSchema);
